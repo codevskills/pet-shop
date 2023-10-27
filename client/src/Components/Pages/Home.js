@@ -3,6 +3,7 @@ import PetNavbar from "../Common/Navbar";
 import { Container, Row } from "react-bootstrap";
 import PetMenubar from "../Common/Menubar";
 import HomeInitialData from "./HomeInitialData";
+import Career from "./Career";
 
 const Home = () => {
   return (
@@ -13,8 +14,11 @@ const Home = () => {
       <Row>
         <PetMenubar />
       </Row>
-      <Row>
+      {/* <Row>
         <HomeInitialData />
+      </Row> */}
+      <Row>
+        <Career />
       </Row>
     </Container>
   );
