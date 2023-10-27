@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Button, Card } from "react-bootstrap";
+import { Container, Row, Button, Card, Col } from "react-bootstrap";
 import axios from "axios";
 
 const HomeInitialData = () => {
@@ -19,16 +19,18 @@ const HomeInitialData = () => {
   }, []);
   return (
     <Container>
-      <Row className="p-5">
+      <Row>
         {Products.map((Product) => (
-          <Card style={{ width: "18rem" }} key={Product.p_id}>
-            <Card.Img variant="top" src={Product.p_image} />
-            <Card.Body>
-              <Card.Title>{Product.p_name}</Card.Title>
-              <Card.Text>{Product.p_discription}</Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
+          <Col xs={12} sm={6} md={4} lg={3} key={Product.p_id}>
+            <Card style={{ width: "100%" }}>
+              <Card.Img variant="top" src={Product.p_image} />
+              <Card.Body>
+                <Card.Title>{Product.p_name}</Card.Title>
+                <Card.Text>{Product.p_discription}</Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
       </Row>
     </Container>
