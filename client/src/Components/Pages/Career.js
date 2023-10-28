@@ -39,7 +39,7 @@ const Career = () => {
   });
   return (
     <div>
-      <Container className="p-0">
+      <Container>
         <Row className="mt-3">
           <Col
             xs={12}
@@ -88,7 +88,7 @@ const Career = () => {
             <img src="../Careerpg/img1.jpg" className="img-fluid" alt="..." />
           </Col>
         </Row>
-        <Row className=" mt-4 why_choose_career_content">
+        <Row className=" mt-3 why_choose_career_content">
           <Row>
             <h1 className=" text-center mt-3">Our Values</h1>
           </Row>
@@ -188,47 +188,44 @@ const Career = () => {
             </ul>
           </Col>
         </Row>
-        <Row className="m-0 p-0 ">
-          <Row className=" opportunities_container p-5 m-0 text-light">
-            <Col>
-              <h1>Current Opportunities:</h1>
-              <p>
-                Below, you'll find a list of our current job openings. Click on
-                each to learn more about the position, qualifications, and
-                application instructions.
-              </p>
-            </Col>
-
-            <Col>
-              <h1>Application Process:</h1>
-              <p>
-                To apply, please follow the instructions provided in each job
-                posting. We appreciate your interest in joining{" "}
-                <strong>PetShop</strong> and we look forward to considering your
-                application.
-              </p>
-            </Col>
-          </Row>
-          <Row className=" bg-body-secondary p-5 m-0 ">
-            <h1>Join Our Team:</h1>
+        <Row className=" opportunities_container p-5 my-3 text-light">
+          <Col>
+            <h1>Current Opportunities:</h1>
             <p>
-              If you're ready to make a difference, grow your career, and be
-              part of an exceptional team, we invite you to explore our current
-              career opportunities. We're excited to learn more about you and
-              what you can bring to our company.
+              Below, you'll find a list of our current job openings. Click on
+              each to learn more about the position, qualifications, and
+              application instructions.
             </p>
-          </Row>
+          </Col>
+
+          <Col>
+            <h1>Application Process:</h1>
+            <p>
+              To apply, please follow the instructions provided in each job
+              posting. We appreciate your interest in joining{" "}
+              <strong>PetShop</strong> and we look forward to considering your
+              application.
+            </p>
+          </Col>
+        </Row>
+        <Row className=" bg-body-secondary p-5 my-3 ">
+          <h1>Join Our Team:</h1>
+          <p>
+            If you're ready to make a difference, grow your career, and be part
+            of an exceptional team, we invite you to explore our current career
+            opportunities. We're excited to learn more about you and what you
+            can bring to our company.
+          </p>
         </Row>
         {/* job openings table */}
         <Row>
-          <h3 className=" text-center bg-dark text-light p-2">Job Openings</h3>
+          <h3 className=" text-center bg-dark text-light p-2 mb-3">Job Openings</h3>
         </Row>
         <Row>
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>s/no</th>
-                <th>Id</th>
+                <th>#</th>
                 <th>Role</th>
                 <th>Location</th>
                 <th>PostedDate</th>
@@ -239,7 +236,6 @@ const Career = () => {
               {reqData.map((user, index) => (
                 <tr key={user._id}>
                   <td>{index + 1}</td>
-                  <td>{user.reqId}</td>
                   <td>{user.reqRole}</td>
                   <td>{user.reqLocation}</td>
                   <td>{user.reqDate}</td>
