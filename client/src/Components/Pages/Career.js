@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import { Carousel, Button } from "react-bootstrap";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
+import { AiOutlineSelect } from "react-icons/ai";
 
 const Career = () => {
   const [reqData, setReqData] = useState([
@@ -39,7 +40,7 @@ const Career = () => {
   });
   return (
     <div>
-      <Container className="p-0">
+      <Container>
         <Row className="mt-3">
           <Col
             xs={12}
@@ -88,55 +89,51 @@ const Career = () => {
             <img src="../Careerpg/img1.jpg" className="img-fluid" alt="..." />
           </Col>
         </Row>
-        <Row className=" mt-4 why_choose_career_content">
-          <Row>
-            <h1 className=" text-center mt-3">Our Values</h1>
-          </Row>
-          <Row>
-            <p className=" text-center mt-5">
-              <strong>
-                At PetShop our core values guide everything we do. We're looking
-                for candidates who resonate with these principles:
-              </strong>
-            </p>
-            <ul className="custom-bullet-list p-5">
-              <li>
-                <div className=" my-3">
-                  <div className="fw-bold ">Excellence</div>
-                  We strive for excellence in all that we do, aiming to
-                  continuously improve and exceed expectations.
-                </div>
-              </li>
-              <li>
-                <div>
-                  <div className="fw-bold">Integrity</div>
-                  We conduct our business with the highest ethical standards,
-                  ensuring honesty, transparency, and trust.
-                </div>
-              </li>
-              <li>
-                <div className=" my-3">
-                  <div className="fw-bold">Innovation</div>
-                  We embrace creativity and innovation, always seeking new and
-                  better ways to achieve our goals.
-                </div>
-              </li>
-              <li>
-                <div>
-                  <div className="fw-bold">Teamwork</div>
-                  Collaboration and teamwork are at the heart of our success,
-                  fostering a supportive and inclusive workplace.
-                </div>
-              </li>
-              <li>
-                <div className=" my-3">
-                  <div className="fw-bold">Client-Centric</div>
-                  Our clients are central to our mission, and we prioritize
-                  their needs and satisfaction.
-                </div>
-              </li>
-            </ul>
-          </Row>
+        <Row className="my-3 p-3 p-md-5 why_choose_career_content">
+          <h1 className=" text-center p-3">Our Values</h1>
+          <span className=" text-center ">
+            <strong>
+              At PetShop our core values guide everything we do. We're looking
+              for candidates who resonate with these principles:
+            </strong>
+          </span>
+          <ul className="custom-bullet-list ps-5 m-0">
+            <li>
+              <div className=" my-3">
+                <div className="fw-bold ">Excellence</div>
+                We strive for excellence in all that we do, aiming to
+                continuously improve and exceed expectations.
+              </div>
+            </li>
+            <li>
+              <div>
+                <div className="fw-bold">Integrity</div>
+                We conduct our business with the highest ethical standards,
+                ensuring honesty, transparency, and trust.
+              </div>
+            </li>
+            <li>
+              <div className=" my-3">
+                <div className="fw-bold">Innovation</div>
+                We embrace creativity and innovation, always seeking new and
+                better ways to achieve our goals.
+              </div>
+            </li>
+            <li>
+              <div>
+                <div className="fw-bold">Teamwork</div>
+                Collaboration and teamwork are at the heart of our success,
+                fostering a supportive and inclusive workplace.
+              </div>
+            </li>
+            <li>
+              <div className=" my-3">
+                <div className="fw-bold">Client-Centric</div>
+                Our clients are central to our mission, and we prioritize their
+                needs and satisfaction.
+              </div>
+            </li>
+          </ul>
         </Row>
         <Row className="mt-3">
           <Col
@@ -161,7 +158,7 @@ const Career = () => {
             <img src="../Careerpg/img2.jpg" className="img-fluid" alt="..." />
           </Col>
 
-          <Col xs={12} lg={6} className="cardside_font text-light p-5">
+          <Col xs={12} lg={6} className="cardside_font text-light ps-5 py-3">
             <h1 className=" text-center">Why Choose PetShop?</h1>
             <ul className="custom-bullet-list ">
               <li>
@@ -188,47 +185,46 @@ const Career = () => {
             </ul>
           </Col>
         </Row>
-        <Row className="m-0 p-0 ">
-          <Row className=" opportunities_container p-5 m-0 text-light">
-            <Col>
-              <h1>Current Opportunities:</h1>
-              <p>
-                Below, you'll find a list of our current job openings. Click on
-                each to learn more about the position, qualifications, and
-                application instructions.
-              </p>
-            </Col>
-
-            <Col>
-              <h1>Application Process:</h1>
-              <p>
-                To apply, please follow the instructions provided in each job
-                posting. We appreciate your interest in joining{" "}
-                <strong>PetShop</strong> and we look forward to considering your
-                application.
-              </p>
-            </Col>
-          </Row>
-          <Row className=" bg-body-secondary p-5 m-0 ">
-            <h1>Join Our Team:</h1>
+        <Row className=" opportunities_container p-3 p-md-5 my-3 text-light">
+          <Col>
+            <h1>Current Opportunities:</h1>
             <p>
-              If you're ready to make a difference, grow your career, and be
-              part of an exceptional team, we invite you to explore our current
-              career opportunities. We're excited to learn more about you and
-              what you can bring to our company.
+              Below, you'll find a list of our current job openings. Click on
+              each to learn more about the position, qualifications, and
+              application instructions.
             </p>
-          </Row>
+          </Col>
+
+          <Col>
+            <h1>Application Process:</h1>
+            <p>
+              To apply, please follow the instructions provided in each job
+              posting. We appreciate your interest in joining{" "}
+              <strong>PetShop</strong> and we look forward to considering your
+              application.
+            </p>
+          </Col>
+        </Row>
+        <Row className=" bg-body-secondary p-3 my-3 p-md-5">
+          <h1>Join Our Team:</h1>
+          <p>
+            If you're ready to make a difference, grow your career, and be part
+            of an exceptional team, we invite you to explore our current career
+            opportunities. We're excited to learn more about you and what you
+            can bring to our company.
+          </p>
         </Row>
         {/* job openings table */}
         <Row>
-          <h3 className=" text-center bg-dark text-light p-2">Job Openings</h3>
+          <h3 className=" text-center bg-dark text-light p-2 mb-3">
+            Job Openings
+          </h3>
         </Row>
         <Row>
-          <Table striped bordered hover responsive>
+          <Table striped bordered hover>
             <thead>
               <tr>
-                <th>s/no</th>
-                <th>Id</th>
+                <th>#</th>
                 <th>Role</th>
                 <th>Location</th>
                 <th>PostedDate</th>
@@ -243,8 +239,9 @@ const Career = () => {
                   <td>{user.reqRole}</td>
                   <td>{user.reqLocation}</td>
                   <td>{user.reqDate}</td>
-                  <td className="d-flex justify-content-center align-items-center">
-                    <a href="/buttons/41" className="btn41-43 btn-41">
+                  <td className=" d-flex justify-content-center align-items-center">
+                    {" "}
+                    <a href="/buttons/41" className="btn41-43 btn-41 ">
                       Apply
                     </a>
                   </td>

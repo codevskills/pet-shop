@@ -72,3 +72,19 @@
 .opportunities_container {
   background-color: #cb574f;
 }
+
+/* Hide Scroll Bar */
+
+.overflow-scroll {
+  overflow: hidden; /* Hide both horizontal and vertical scroll bars */
+}
+
+.table-without-scrollbar {
+  overflow: auto; /* Enable scrolling */
+  scrollbar-width: none; /* Hide Firefox scroll bar */
+  -ms-overflow-style: none; /* Hide IE/Edge scroll bar */
+}
+
+.table-without-scrollbar::-webkit-scrollbar {
+  width: 0; /* Hide Chrome/WebKit scroll bar */
+}
