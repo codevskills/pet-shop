@@ -234,11 +234,11 @@ const Career = () => {
             <tbody>
               {reqData.map((user, index) => (
                 <tr key={user._id}>
-                  <td>{index + 1}</td>
-                  <td>{user.reqRole}</td>
-                  <td>{user.reqLocation}</td>
-                  <td>{user.reqDate}</td>
-                  <td className="position-relative">
+                  <td className="p-sm-3">{index + 1}</td>
+                  <td className="p-sm-3">{user.reqRole}</td>
+                  <td className="p-sm-3">{user.reqLocation}</td>
+                  <td className="p-sm-3">{user.reqDate}</td>
+                  <td className="p-sm-3 position-relative">
                     <div className=" position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center">
                       <a
                         href="/buttons/41"
