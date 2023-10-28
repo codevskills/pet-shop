@@ -34,10 +34,12 @@ const Career = () => {
                 <h1>Careers At PetShop</h1>
               </Card.Title>
               <Card.Text className="mt-4">
-                At PetShop, we create marketplaces that offer safe and
-                easy-to-use trading platforms and services that are available
-                for everyone. And we work together to build a more sustainable
-                world through trade.
+                Welcome to <strong>PetShop</strong> Career Page! We're delighted
+                that you're considering joining our team. At{" "}
+                <strong>PetShop</strong>, we believe that our success is driven
+                by the talent, dedication, and passion of our employees. We are
+                always on the lookout for exceptional individuals who are eager
+                to make a difference and contribute to our mission.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -46,111 +48,48 @@ const Career = () => {
           <img src="../Careerpg/img1.jpg" className="img-fluid" alt="..." />
         </Col>
       </Row>
-      <Row className=" mt-4">
+      <Row className=" mt-4 why_choose_career_content">
         <Row>
-          <h1>Our People</h1>
+          <h1>Our Values</h1>
         </Row>
-        <Row>
-          <Carousel
-            id="carouselExampleAutoplaying"
-            className="carousel slide"
-            interval={4000}
-          >
-            <Carousel.Item className="carousel-item">
-              <Row>
-                <Col xs={12} md={4}>
-                  <img
-                    src="../Careerpg/team.jpg"
-                    className="rounded-circle d-block"
-                    width={70}
-                    height={70}
-                    alt="..."
-                  />
-                </Col>
-                <Col xs={12} md={8}>
-                  <Row>Saran Kumar</Row>
-                  <Row>FullStack Web Developer</Row>
-                </Col>
-                <Col xs={12}>
-                  <p>
-                    “Here I feel a strong sense of community and teamwork where
-                    everyone is empowered to do great things – together! It’s
-                    never boring and always challenging.”
-                  </p>
-                </Col>
-              </Row>
-            </Carousel.Item>
-
-            <Carousel.Item className="carousel-item">
-              <Row>
-                <Col xs={12} md={4}>
-                  <img
-                    src="../Careerpg/team.jpg"
-                    className="rounded-circle d-block"
-                    width={70}
-                    height={70}
-                    alt="..."
-                  />
-                </Col>
-                <Col xs={12} md={8}>
-                  <Row>Saran Kumar</Row>
-                  <Row>FullStack Web Developer</Row>
-                </Col>
-                <Col xs={12}>
-                  <p>
-                    “Here I feel a strong sense of community and teamwork where
-                    everyone is empowered to do great things – together! It’s
-                    never boring and always challenging.”
-                  </p>
-                </Col>
-              </Row>
-            </Carousel.Item>
-
-            <Button
-              className="carousel-control-prev"
-              data-bs-target="#carouselExampleAutoplaying"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </Button>
-            <Button
-              className="carousel-control-next"
-              data-bs-target="#carouselExampleAutoplaying"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </Button>
-          </Carousel>
-        </Row>
+        <Row></Row>
       </Row>
-      <Row className="mt-3 bg-body-secondary">
+      <Row className="mt-3">
         <Col xs={12} md={6} className="p-0">
           <img src="../Careerpg/img2.jpg" className="img-fluid" alt="..." />
         </Col>
-        <Col
-          xs={12}
-          md={6}
-          className="p-3 p-sm-5 cardside_font text-light d-flex justify-content-center align-items-center flex-column"
-        >
-          <h1>Why Should I Join PetShop?</h1>
-          <p>
-            From the things we do together to the things we do differently,
-            PetShop is a place for everyone. We’ve gathered the top ten reasons
-            why people choose to join – and stay – with the team here.
-          </p>
+        <Col xs={12} md={6} className="cardside_font text-light">
+          <h1>Why Choose PetShop?</h1>
+          <ul className="custom-bullet-list ">
+            <li>
+              <div>
+                <div className="fw-bold">Innovative Culture</div>
+                Join a dynamic and innovative workplace where you'll have the
+                opportunity to work on cutting-edge projects and solutions.
+              </div>
+            </li>
+            <li>
+              <div>
+                <div className="fw-bold">Career Development</div>
+                We are committed to helping our employees grow, both personally
+                and professionally. We offer a range of development programs and
+                opportunities to advance your career.
+              </div>
+            </li>
+            <li>
+              <div>
+                <div className="fw-bold">Collaborative Environment</div>
+                Be a part of a diverse and collaborative team that values open
+                communication, teamwork, and creative problem-solving.
+              </div>
+            </li>
+          </ul>
           <a href="/buttons/41" className="btn41-43 btn-41 mt-4">
             Apply
           </a>
         </Col>
       </Row>
+
       <Row>
         {reqData.map((user, index) => (
           <Table striped bordered hover>

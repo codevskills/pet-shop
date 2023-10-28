@@ -48,3 +48,20 @@
   top: 2px;
 }
 
+.why_choose_career_content {
+  background-color: #8f9fcf;
+  color: white;
+}
+
+.custom-bullet-list {
+  list-style-type: disc; /* Use 'disc' for bullet points */
+  background-color: transparent; /* Remove the background color */
+  padding-left: 0; /* Remove padding for the unordered list */
+  margin-left: 10px; /* Remove margin for the unordered list */
+}
+
+
+
+.custom-bullet-list p {
+  margin-top: 5px; /* Add some spacing between the heading and the paragraph */
+}
