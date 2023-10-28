@@ -1,4 +1,3 @@
-import "./App.scss";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PetHome from "./Components/Pages/Home";
 import { PageNotFound } from "./Components/Common/PageNotFound";
