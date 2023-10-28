@@ -1,6 +1,9 @@
 /* Careerpg */
 .cardside_font {
   background-color: #263cce;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .btn41-43 {
   padding: 10px 25px;
@@ -16,9 +19,9 @@
 }
 
 .btn-41 {
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid #6089c0;
   z-index: 1;
-  color: white;
+  color: blue;
 }
 
 .btn-41:after {
@@ -30,7 +33,10 @@
   left: 0;
   direction: rtl;
   z-index: -1;
-  background: rgb(255, 255, 255);
+  background-color: #6089c0;
+
+  // background: rgb(255, 255, 255);
+  // background: rgb(255, 255, 255);
   transition: all 0.3s ease;
 }
 
@@ -60,8 +66,9 @@
   margin-left: 10px; /* Remove margin for the unordered list */
 }
 
-
-
 .custom-bullet-list p {
   margin-top: 5px; /* Add some spacing between the heading and the paragraph */
+}
+.opportunities_container {
+  background-color: #cb574f;
 }

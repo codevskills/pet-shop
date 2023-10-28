@@ -6,7 +6,27 @@ import axios from "axios";
 import Table from "react-bootstrap/Table";
 
 const Career = () => {
-  const [reqData, setReqData] = useState([]);
+  const [reqData, setReqData] = useState([
+    {
+      reqId: 1,
+      reqRole: "Software Engineer",
+      reqLocation: "New York",
+      reqDate: "2023-10-28"
+    },
+    {
+      reqId: 2,
+      reqRole: "Data Analyst",
+      reqLocation: "San Francisco",
+      reqDate: "2023-10-29"
+    },
+    {
+      reqId: 3,
+      reqRole: "Product Manager",
+      reqLocation: "Los Angeles",
+      reqDate: "2023-10-30"
+    }
+  ]);
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/req-get")
@@ -19,7 +39,7 @@ const Career = () => {
   });
   return (
     <div>
-      <Container>
+      <Container className="p-0">
         <Row className="mt-3">
           <Col
             xs={12}
@@ -46,7 +66,12 @@ const Career = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs={12} lg={6} className="p-0 d-flex align-items-center" style={{ position: "relative" }}>
+          <Col
+            xs={12}
+            lg={6}
+            className="p-0 d-flex align-items-center"
+            style={{ position: "relative" }}
+          >
             <div
               className="bg-image"
               style={{
@@ -65,12 +90,61 @@ const Career = () => {
         </Row>
         <Row className=" mt-4 why_choose_career_content">
           <Row>
-            <h1>Our Values</h1>
+            <h1 className=" text-center mt-3">Our Values</h1>
           </Row>
-          <Row></Row>
+          <Row>
+            <p className=" text-center mt-5">
+              <strong>
+                At PetShop our core values guide everything we do. We're looking
+                for candidates who resonate with these principles:
+              </strong>
+            </p>
+            <ul className="custom-bullet-list p-5">
+              <li>
+                <div className=" my-3">
+                  <div className="fw-bold ">Excellence</div>
+                  We strive for excellence in all that we do, aiming to
+                  continuously improve and exceed expectations.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div className="fw-bold">Integrity</div>
+                  We conduct our business with the highest ethical standards,
+                  ensuring honesty, transparency, and trust.
+                </div>
+              </li>
+              <li>
+                <div className=" my-3">
+                  <div className="fw-bold">Innovation</div>
+                  We embrace creativity and innovation, always seeking new and
+                  better ways to achieve our goals.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <div className="fw-bold">Teamwork</div>
+                  Collaboration and teamwork are at the heart of our success,
+                  fostering a supportive and inclusive workplace.
+                </div>
+              </li>
+              <li>
+                <div className=" my-3">
+                  <div className="fw-bold">Client-Centric</div>
+                  Our clients are central to our mission, and we prioritize
+                  their needs and satisfaction.
+                </div>
+              </li>
+            </ul>
+          </Row>
         </Row>
         <Row className="mt-3">
-          <Col xs={12} lg={6} className="p-0 d-flex align-items-center" style={{ position: "relative" }}>
+          <Col
+            xs={12}
+            lg={6}
+            className="p-0 d-flex align-items-center"
+            style={{ position: "relative" }}
+          >
             <div
               className="bg-image"
               style={{
@@ -87,60 +161,98 @@ const Career = () => {
             <img src="../Careerpg/img2.jpg" className="img-fluid" alt="..." />
           </Col>
 
-          <Col xs={12} lg={6} className="cardside_font text-light">
-            <h1>Why Choose PetShop?</h1>
+          <Col xs={12} lg={6} className="cardside_font text-light p-5">
+            <h1 className=" text-center">Why Choose PetShop?</h1>
             <ul className="custom-bullet-list ">
               <li>
-                <div>
+                <div className=" p-3">
                   <div className="fw-bold">Innovative Culture</div>
                   Join a dynamic and innovative workplace where you'll have the
                   opportunity to work on cutting-edge projects and solutions.
                 </div>
               </li>
               <li>
-                <div>
+                <div className=" p-3">
                   <div className="fw-bold">Career Development</div>
                   We are committed to helping our employees grow, both
                   personally and professionally.
                 </div>
               </li>
               <li>
-                <div>
+                <div className=" p-3">
                   <div className="fw-bold">Collaborative Environment</div>
                   Be a part of a diverse and collaborative team that values open
                   communication, teamwork, and creative problem-solving.
                 </div>
               </li>
             </ul>
-            <a href="/buttons/41" className="btn41-43 btn-41 mt-4">
-              Apply
-            </a>
           </Col>
         </Row>
+        <Row className="m-0 p-0 ">
+          <Row className=" opportunities_container p-5 m-0 text-light">
+            <Col>
+              <h1>Current Opportunities:</h1>
+              <p>
+                Below, you'll find a list of our current job openings. Click on
+                each to learn more about the position, qualifications, and
+                application instructions.
+              </p>
+            </Col>
 
+            <Col>
+              <h1>Application Process:</h1>
+              <p>
+                To apply, please follow the instructions provided in each job
+                posting. We appreciate your interest in joining{" "}
+                <strong>PetShop</strong> and we look forward to considering your
+                application.
+              </p>
+            </Col>
+          </Row>
+          <Row className=" bg-body-secondary p-5 m-0 ">
+            <h1>Join Our Team:</h1>
+            <p>
+              If you're ready to make a difference, grow your career, and be
+              part of an exceptional team, we invite you to explore our current
+              career opportunities. We're excited to learn more about you and
+              what you can bring to our company.
+            </p>
+          </Row>
+        </Row>
+        {/* job openings table */}
         <Row>
-          {reqData.map((user, index) => (
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>s/no</th>
-                  <th>Id</th>
-                  <th>Role</th>
-                  <th>Location</th>
-                  <th>PostedDate</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{user.index + 1}</td>
+          <h3 className=" text-center bg-dark text-light p-2">Job Openings</h3>
+        </Row>
+        <Row>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>s/no</th>
+                <th>Id</th>
+                <th>Role</th>
+                <th>Location</th>
+                <th>PostedDate</th>
+                <th>Apply</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reqData.map((user, index) => (
+                <tr key={user._id}>
+                  <td>{index + 1}</td>
                   <td>{user.reqId}</td>
                   <td>{user.reqRole}</td>
                   <td>{user.reqLocation}</td>
                   <td>{user.reqDate}</td>
+                  <td className=" d-flex justify-content-center align-items-center">
+                    {" "}
+                    <a href="/buttons/41" className="btn41-43 btn-41 ">
+                      Apply
+                    </a>
+                  </td>
                 </tr>
-              </tbody>
-            </Table>
-          ))}
+              ))}
+            </tbody>
+          </Table>
         </Row>
       </Container>
     </div>
