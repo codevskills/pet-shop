@@ -224,7 +224,7 @@ const Career = () => {
           <h3 className=" text-center bg-dark text-light p-2">Job Openings</h3>
         </Row>
         <Row>
-          <Table striped bordered hover>
+          <Table striped bordered hover responsive>
             <thead>
               <tr>
                 <th>s/no</th>
@@ -243,9 +243,8 @@ const Career = () => {
                   <td>{user.reqRole}</td>
                   <td>{user.reqLocation}</td>
                   <td>{user.reqDate}</td>
-                  <td className=" d-flex justify-content-center align-items-center">
-                    {" "}
-                    <a href="/buttons/41" className="btn41-43 btn-41 ">
+                  <td className="d-flex justify-content-center align-items-center">
+                    <a href="/buttons/41" className="btn41-43 btn-41">
                       Apply
                     </a>
                   </td>
