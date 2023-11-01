@@ -88,3 +88,45 @@
 .table-without-scrollbar::-webkit-scrollbar {
   width: 0; /* Hide Chrome/WebKit scroll bar */
 }
+
+.form_height {
+  height: 100%;
+}
+
+.google_btn {
+  width: 230px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: #2c444e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.google_btn > img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.google_btn > span {
+  margin-left: 10px;
+}
+
+.Image_Icon {
+  font-size: 75px;
+}
+
+.remove-photo {
+  position: absolute;
+  top: -10;
+    right: 0;
+}

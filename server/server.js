@@ -8,6 +8,7 @@ const mongoose = require("./src/config/db");
 
 const requirementController = require("./src/controller/career.controller");
 const userController = require("./src/controller/user.controller");
+const adController = require("./src/controller/ad.controller");
 
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(bodyParser.json());
@@ -17,6 +18,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use("/", requirementController);
 app.use("/", userController);
+app.use("/", adController);
 
 app.listen(PORT, () => {
   console.log(`Server listening at the PORT: ${PORT}`);

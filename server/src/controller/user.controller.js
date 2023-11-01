@@ -8,7 +8,7 @@ router.get("/req-get", async (req, res) => {
   res.send(data);
 });
 
-app.get("/req-get/:id", async (req, res) => {
+router.get("/req-get/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const find_one = await userDataModel.findById(id);
@@ -32,7 +32,7 @@ router.post("/req-post", async (req, res) => {
   res.send("Data posted: ");
 });
 
-app.put("/update/:id", async (req, res) => {
+router.put("/update/:id", async (req, res) => {
   const id = req.params.id;
   const { userName, email, phoneNumber, password, profileUrl } = req.body;
   console.log(req.body);
