@@ -14,9 +14,9 @@ const Home = () => {
       <Row>
         <PetMenubar />
       </Row>
-      {/* <Row>
+      {/* <Container className="py-5">
         <HomeInitialData />
-      </Row> */}
+      </Container> */}
       <Row>
         <Career />
       </Row>
