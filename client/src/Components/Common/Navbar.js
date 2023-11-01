@@ -1,27 +1,32 @@
 import { useState, useEffect } from "react";
-import {
-  Button,
-  Modal,
-  Container,
-  Nav,
-  Navbar,
-  NavDropdown
-} from "react-bootstrap";
+import { Button, Modal, Container, Nav, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
+import { FaSearch } from "react-icons/fa";
+import {
+  loginUserId,
+  loginUserName,
+  loginUserEmail,
+  loginUserImage
+} from "../Redux/ReduxUserData/UserDataAction";
+import { useDispatch, useSelector } from "react-redux";
 
 function PetNavbar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [user, setUser] = useState(null);
+  const userId = useSelector((state) => state.userData.userId);
+  const userName = useSelector((state) => state.userData.userName);
+  const userImage = useSelector((state) => state.userData.userImage);
 
-  const storedUserName = localStorage.getItem("loginUserName");
-  const storedUserProfile = localStorage.getItem("loginUserImage");
+  console.log("<><>", userId, userName, userImage);
 
-  const google = () => {
+  const handleGoogleLogin = () => {
     window.open("http://localhost:5000/auth/google", "_self");
   };
 
@@ -40,10 +45,13 @@ function PetNavbar() {
           if (response.status === 200) return response.json();
           throw new Error("authentication has been failed!");
         })
-        .then((resObject) => {
-          setUser(resObject.user);
-          localStorage.setItem("loginUserName", resObject.user.username);
-          localStorage.setItem("loginUserImage", resObject.user.userProfile);
+        .then((res) => {
+          setUser(res.user);
+          console.log(res.user);
+          dispatch(loginUserId(res.user._id));
+          dispatch(loginUserName(res.user.username));
+          dispatch(loginUserEmail(res.user.email));
+          dispatch(loginUserImage(res.user.userProfile));
         })
         .catch((err) => {
           console.log(err);
@@ -53,8 +61,10 @@ function PetNavbar() {
   }, []);
 
   const logoutHandler = () => {
-    if (storedUserName) {
+    if (userName) {
+      localStorage.removeItem("loginUserId");
       localStorage.removeItem("loginUserName");
+      localStorage.removeItem("loginUserEmail");
       localStorage.removeItem("loginUserImage");
       window.open("http://localhost:5000/auth/logout", "_self");
       navigate("/");
@@ -62,7 +72,13 @@ function PetNavbar() {
   };
 
   return (
-    <Navbar collapseOnSelect expand="md" className="bg-body-tertiary">
+    <Navbar
+      collapseOnSelect
+      expand="md"
+      className="bg-body-tertiary"
+      bg="dark"
+      data-bs-theme="dark"
+    >
       <Container fluid>
         <Navbar.Brand href="#home">Pet Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -70,23 +86,22 @@ function PetNavbar() {
           <Nav className="me-auto">
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            <div class="search-box center">
+              <button class="btn-search center">
+                <FaSearch className="fas fa-search" />
+              </button>
+              <input
+                type="text"
+                className="input-search"
+                placeholder="Type to Search..."
+              />
+            </div>
           </Nav>
           <Nav>
-            {storedUserProfile ? (
+            {userImage ? (
               <div className="center">
                 <img
-                  src={storedUserProfile}
+                  src={userImage}
                   width={40}
                   height={40}
                   alt=""
@@ -96,7 +111,7 @@ function PetNavbar() {
             ) : (
               <></>
             )}
-            {storedUserName || storedUserProfile ? (
+            {userName || userImage ? (
               <Button
                 onClick={() => {
                   logoutHandler();
@@ -115,23 +130,13 @@ function PetNavbar() {
       </Container>
       <div className="Model">
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
+          <Modal.Header closeButton></Modal.Header>
           <Modal.Body className="d-flex justify-content-center align-items-center">
-            <button className="google_btn border" onClick={google}>
+            <button className="google_btn border" onClick={handleGoogleLogin}>
               <img src="/images/google.png" alt="google icon" />
               <span>Sign in with Google</span>
             </button>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
         </Modal>
       </div>
     </Navbar>

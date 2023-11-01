@@ -30,7 +30,7 @@ const petSchema = new mongoose.Schema(
       required: true
     },
     phoneNumber: {
-      type: Number,
+      type: String,
       required: true
     },
     locations: [locationSchema],
@@ -49,13 +49,13 @@ const petSchema = new mongoose.Schema(
     },
     seller: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "User-Data",
       required: true
     },
   },
   { timestamps: true }
 );
 
-const Pet = mongoose.model("Pet", petSchema);
+const Pet = mongoose.model("Pet-Data", petSchema);
 
 module.exports = Pet;

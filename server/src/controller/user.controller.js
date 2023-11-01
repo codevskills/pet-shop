@@ -161,7 +161,9 @@ router.get("/req-get/:id", async (req, res) => {
   }
 });
 
-router.post("/req-post", async (req, res) => {
+/* To Post a New Add by User */
+
+router.post("/user/add", async (req, res) => {
   const { reqRole, reqId, reqLocation, reqPostedDate } = req.body;
   console.log(req.body);
   const req_data = new userDataModel({

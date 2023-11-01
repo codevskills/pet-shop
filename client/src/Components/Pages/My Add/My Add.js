@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Button, Card, Col } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const HomeInitialData = () => {
   const [Products, setProducts] = useState([]);
+  console.log("Data received: ", Products);
 
   useEffect(() => {
     axios
@@ -26,7 +28,10 @@ const HomeInitialData = () => {
               <Card.Body>
                 <Card.Title>{Product.p_name}</Card.Title>
                 <Card.Text>{Product.p_discription}</Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Link to={`/add/update/${Product.p_id}`}>
+                  <Button variant="primary">Update</Button>
+                </Link>
+                <Button variant="primary">Delete</Button>
               </Card.Body>
             </Card>
           </Col>

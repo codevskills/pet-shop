@@ -8,15 +8,8 @@ import { BsImage } from "react-icons/bs";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
-import { useSelector } from "react-redux";
 
 function FormExample() {
-  const userIdString = localStorage.getItem("loginUserId")
-  const userIds = JSON.parse(userIdString);
-  const userEmail = useSelector((stateId) => stateId.userData.userEmail);
-
-  console.log("########", userIds, userEmail);
-
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
   const fileInputRefs = [useRef(), useRef(), useRef(), useRef()];
   const [countries, setCountries] = useState([]);
@@ -31,7 +24,6 @@ function FormExample() {
   ]);
   const [PostAddData, setPostAddData] = useState(null);
 
-
   const schema = yup.object().shape({
     title: yup.string().required("Ad title is required"),
     description: yup.string().required("Description is required"),
@@ -45,7 +37,7 @@ function FormExample() {
 
   const PostAPI = async () => {
     await axios
-      .post(`${BACKEND_URL}/api/post/add`, PostAddData)
+      .post(`${BACKEND_URL}/post/add`, PostAddData)
       .then((res) => {
         console.log(res.data.message);
       })
@@ -77,8 +69,6 @@ function FormExample() {
       };
 
       const data = {
-        userId: userIds,
-        userEmail: userEmail,
         title: values.title,
         description: values.description,
         price: values.price,

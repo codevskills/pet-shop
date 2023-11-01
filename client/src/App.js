@@ -5,6 +5,9 @@ import Career from "./Components/Pages/Career";
 import Sell from "./Components/Pages/Sell/Sell";
 
 import Test from "./Components/Pages/Sell/Sell"
+import MyAdd from "./Components/Pages/My Add/My Add";
+import UpdateAdd from "./Components/Pages/My Add/Update Add";
+
 
 function App() {
   return (
@@ -14,8 +17,10 @@ function App() {
           <Route path="/" element={<PetHome />} />
           <Route path="/career" element={<Career />} />
           <Route path="/sell" element={<Sell />} />
+          <Route path="/add" element={<MyAdd />} />
+          <Route path="/add/update/:id" element={<UpdateAdd />} />
           <Route path="/page-not-found" element={<PageNotFound />} />
-          <Route path="*" element={<Navigate to="/page-not-found" />} />
+          {/* <Route path="*" element={<Navigate to="/page-not-found" />} /> */}
           <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
