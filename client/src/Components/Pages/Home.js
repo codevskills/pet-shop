@@ -3,9 +3,15 @@ import PetNavbar from "../Common/Navbar";
 import { Container, Row } from "react-bootstrap";
 import PetMenubar from "../Common/Menubar";
 import HomeInitialData from "./HomeInitialData";
-import Career from "./Career";
+import { useSelector } from "react-redux";
+import Footer from "../Common/Footer";
+
 
 const Home = () => {
+  const userId = useSelector((state) => state.userData.userId);
+  const userEmail = useSelector((state) => state.userData.userEmail);
+
+  console.log("########", userId, userEmail);
   return (
     <Container fluid>
       <Row>
@@ -14,12 +20,10 @@ const Home = () => {
       <Row>
         <PetMenubar />
       </Row>
-      {/* <Row>
+      <Container className="py-5">
         <HomeInitialData />
-      </Row> */}
-      <Row>
-        <Career />
-      </Row>
+      </Container>
+      <Footer />
     </Container>
   );
 };

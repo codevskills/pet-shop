@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { Carousel, Button } from "react-bootstrap";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 import { AiOutlineSelect } from "react-icons/ai";
@@ -28,6 +27,10 @@ const Career = () => {
     }
   ]);
   const [isSmallScreen576, setIsSmallScreen576] = useState(false);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1821c5b97cb8574218a9133ea65b340eee0fdc9e
 
   useEffect(() => {
     axios
@@ -38,7 +41,11 @@ const Career = () => {
       .catch((error) => {
         console.log(error);
       });
+<<<<<<< HEAD
   });
+=======
+  }, []);
+>>>>>>> 1821c5b97cb8574218a9133ea65b340eee0fdc9e
 
   useEffect(() => {
     const handleResize = () => {
@@ -96,7 +103,7 @@ const Career = () => {
               className="bg-image"
               style={{
                 backgroundImage: "url(../Careerpg/img1.jpg)",
-                filter: "blur(0px)", // You can adjust the blur intensity
+                filter: "blur(5px)", // You can adjust the blur intensity
                 width: "100%",
                 height: "100%",
                 position: "absolute",
@@ -165,7 +172,7 @@ const Career = () => {
               className="bg-image"
               style={{
                 backgroundImage: "url(../Careerpg/img2.jpg)",
-                filter: "blur(0px)", // You can adjust the blur intensity
+                filter: "blur(5px)", // You can adjust the blur intensity
                 width: "100%",
                 height: "100%",
                 position: "absolute",
@@ -251,20 +258,29 @@ const Career = () => {
               </tr>
             </thead>
             <tbody>
-              {reqData.map((user, index) => (
-                <tr key={user._id}>
+              {reqData?.map((user, index) => (
+                <tr key={user.reqRole}>
                   <td>{index + 1}</td>
                   <td>{user.reqRole}</td>
                   <td>{user.reqLocation}</td>
                   <td>{user.reqDate}</td>
                   <td className={TableResponsive576}>
                     {isSmallScreen576 ? (
+<<<<<<< HEAD
                       <div className=" position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center ">
                         <a
                           href="/buttons/41"
                           className="d-flex justify-content-center align-items-center "
                         >
                           <AiOutlineSelect className="fs-1 " />
+=======
+                      <div className=" position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center">
+                        <a
+                          href="/buttons/41"
+                          className="d-flex justify-content-center align-items-center"
+                        >
+                          <AiOutlineSelect className="fs-1" />
+>>>>>>> 1821c5b97cb8574218a9133ea65b340eee0fdc9e
                         </a>
                       </div>
                     ) : (
