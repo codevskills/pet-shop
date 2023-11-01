@@ -239,8 +239,8 @@ const Career = () => {
             Job Openings
           </h3>
         </Row>
-        <Row className="overflow-scroll table-without-scrollbar">
-          <Table striped bordered hover className="table-without-scrollbar">
+        <Row>
+          <Table striped bordered hover>
             <thead>
               <tr>
                 <th>#</th>
