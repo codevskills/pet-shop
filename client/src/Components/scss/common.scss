@@ -1,0 +1,268 @@
+/* Careerpg */
+.cardside_font {
+  background-color: #263cce;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn41-43 {
+  padding: 10px 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-41 {
+  border: 2px solid #6089c0;
+  z-index: 1;
+  color: blue;
+}
+
+.btn-41:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  background-color: #6089c0;
+
+  // background: rgb(255, 255, 255);
+  // background: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+
+.btn-41:hover {
+  color: rgb(0, 0, 0);
+}
+
+.btn-41:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn-41:active {
+  top: 2px;
+}
+
+.why_choose_career_content {
+  background-color: #8f9fcf;
+  color: white;
+}
+
+.custom-bullet-list {
+  list-style-type: disc; /* Use 'disc' for bullet points */
+  background-color: transparent; /* Remove the background color */
+  padding-left: 0; /* Remove padding for the unordered list */
+  margin-left: 10px; /* Remove margin for the unordered list */
+}
+
+.custom-bullet-list p {
+  margin-top: 5px; /* Add some spacing between the heading and the paragraph */
+}
+.opportunities_container {
+  background-color: #cb574f;
+}
+
+/* Hide Scroll Bar */
+
+.overflow-scroll {
+  overflow: hidden; /* Hide both horizontal and vertical scroll bars */
+}
+
+.table-without-scrollbar {
+  overflow: auto; /* Enable scrolling */
+  scrollbar-width: none; /* Hide Firefox scroll bar */
+  -ms-overflow-style: none; /* Hide IE/Edge scroll bar */
+}
+
+.table-without-scrollbar::-webkit-scrollbar {
+  width: 0; /* Hide Chrome/WebKit scroll bar */
+}
+
+/* .TableApplybtnSmall {
+  min-height: 64px !important;
+}
+ */
+/* About */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.j-c {
+  display: flex;
+  justify-content: center;
+}
+
+.a-c {
+  display: flex;
+  align-items: center;
+}
+
+.t-c {
+  text-align: center;
+}
+
+.col_background-color {
+  background-color: #263cce;
+  color: white;
+}
+
+/* button */
+
+.btn1 {
+  display: inline-block;
+  padding: 0.6em 1.7em;
+  border: 0.1em solid black;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+}
+.btn1:hover {
+  color: white;
+  background-color: black;
+}
+
+.contact_position {
+  position: absolute;
+  top: 30%;
+  bottom: 0;
+  right: 0;
+  left: 25%;
+  flex-direction: column;
+}
+
+/* svg  top*/
+
+.custom-shape-divider-top-1698589152 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -10;
+}
+
+.custom-shape-divider-top-1698589152 svg {
+  position: relative;
+  display: block;
+  width: calc(185% + 1.3px);
+  height: 329px;
+}
+
+.custom-shape-divider-top-1698589152 .shape-fill {
+  fill: #5dade2;
+}
+
+/* For tablet devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-top-1698589152 svg {
+    width: calc(210% + 1.3px);
+    height: 138px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+  .custom-shape-divider-top-1698589152 svg {
+    width: calc(300% + 1.3px);
+    height: 299px;
+  }
+}
+
+/* svg bottom */
+.custom-shape-divider-bottom-1698592075 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: -1000;
+}
+
+.custom-shape-divider-bottom-1698592075 svg {
+  position: relative;
+  display: block;
+  width: calc(198% + 1.3px);
+  height: 393px;
+}
+
+.custom-shape-divider-bottom-1698592075 .shape-fill {
+  fill: #5dade2;
+}
+
+/* For tablet devices */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1698592075 svg {
+    width: calc(210% + 1.3px);
+    height: 138px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1698592075 svg {
+    width: calc(189% + 1.3px);
+    height: 289px;
+  }
+}
+
+/* google_btn */
+
+.google_btn {
+  width: 230px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: #2c444e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.google_btn > img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.google_btn > span {
+  margin-left: 10px;
+}
+
+.Image_Icon {
+  font-size: 75px;
+}
+
+.remove-photo {
+  position: absolute;
+  top: -10;
+  right: 0;
+}

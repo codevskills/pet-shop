@@ -4,7 +4,7 @@ require("dotenv").config();
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  dbName: 'Coffee-Time', // Specify the database name here
+  dbName: 'Pet-Shop', // Specify the database name here
 });
 
 const db = mongoose.connection; // Get the mongoose connection object directly
